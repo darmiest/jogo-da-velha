@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-color: rgb(210, 201, 241);
 }
 
 .quadrado {
@@ -23,6 +24,7 @@ button {
     margin-top: 10px;
     width: 100px;
     height: 30px;
-    background: #eee;
+    background: rgb(177, 135, 255);
     cursor: pointer;
+    border-radius: 5px;
 }
