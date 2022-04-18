@@ -8,6 +8,10 @@ mudarJogador('X');
 
 function escolherQuadrado(id){
 
+    if(vencedor !== null){
+        return;
+    }
+
     var quadrado = document.getElementById(id);
     if (quadrado.innerHTML !== '-'){
         return;
@@ -57,10 +61,27 @@ function checaVencedor(){
         mudarVencedor(quadrado7);
         return;
     }
+    if (checaSequencia(quadrado1, quadrado5, quadrado9)){
+        mudaCorQuadrado(quadrado1, quadrado5, quadrado9);
+        mudarVencedor(quadrado1);
+    }
+    if (checaSequencia(quadrado3, quadrado5, quadrado7)){
+        mudaCorQuadrado(quadrado3, quadrado5, quadrado7);
+        mudarVencedor(quadrado3);
+    }
     if (checaSequencia(quadrado1, quadrado4, quadrado7)){
         mudaCorQuadrado(quadrado1, quadrado4, quadrado7);
-        mudarVencedor(quadrado4);
+        mudarVencedor(quadrado1);
     }
+    if (checaSequencia(quadrado2, quadrado5, quadrado8)){
+        mudaCorQuadrado(quadrado2, quadrado5, quadrado8);
+        mudarVencedor(quadrado2);
+    }
+    if (checaSequencia(quadrado3, quadrado6, quadrado9)){
+        mudaCorQuadrado(quadrado3, quadrado6, quadrado9);
+        mudarVencedor(quadrado3);
+    }
+    
 }
  
 function mudarVencedor(quadrado){
@@ -75,11 +96,25 @@ function mudaCorQuadrado(quadrado1, quadrado2, quadrado3){
 }
 
 function checaSequencia(quadrado1, quadrado2, quadrado3){
-    var eigual = false;
+    var sequencia = false;
 
     if(quadrado1.innerHTML !== '-' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3.innerHTML){
-        eigual = true;
+        sequencia = true;
     }
 
-    return eigual;
+    return sequencia;
+}
+
+function reiniciar(){
+    vencedor= null;
+    vencedorSelecionado.innerHTML = '';
+
+    for(var i = 1; i <=9; i++){
+        var quadrado = document.getElementById(i);
+        quadrado.style.background = '#eee';
+        quadrado.style.color = '#eee';
+        quadrado.innerHTML = '-';
+    }
+
+    mudarJogador('X');
 }
