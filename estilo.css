@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: rgb(210, 201, 241);
+    background-color: rgb(108, 84, 196);
 }
 
 .quadrado {
@@ -13,6 +13,8 @@ body {
     margin: 5px;
     cursor: pointer; 
     color: #eee;
+    border: 5px solid black;
+    border-radius: 10px;
 }
 
 .jogador, .vencedor{
@@ -24,7 +26,7 @@ button {
     margin-top: 10px;
     width: 100px;
     height: 30px;
-    background: rgb(177, 135, 255);
+    background: rgb(39, 166, 216);
     cursor: pointer;
     border-radius: 5px;
 }
